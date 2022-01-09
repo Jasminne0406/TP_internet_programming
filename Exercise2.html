@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw a live camera video into a Canvas</title>
+</head>
+<style>
+    .box{
+        border: 6px solid gray;
+        border-bottom: 55px solid gray;
+        margin-top: 90px;
+        width:400px;
+        height: 300px;
+        position: relative;
+    }
+    #caption1{
+        position: absolute;
+        color: white;
+        top: 290px;
+        left: 75px;
+    }
+    #image{
+        width:20px;
+        height:20px;
+        left:50px;
+        position: absolute;
+    }
+    #caption2{
+        position: absolute;
+        color: white;
+        top: 290px;
+        left: 150px;
+    }
+    #buttonPause{
+        position: absolute;
+        left:175px;
+        top:325px;
+        border: none;
+    }
+    #canvas2{
+        position: absolute;
+        left:0px;
+    }
+
+</style>
+<body>
+    <center>
+    <div class="box">
+        <canvas width="400" height="300" id="canvas"></canvas>
+        <canvas width="400" height="300" id="canvas2" hidden></canvas>
+        <p id="caption1">Canvas  <img src="ghost.png" id="image"></p>
+        <p id="caption2">: Please show your face on me</p>
+        <video width="500" height="500" id="video" autoplay hidden></video>
+        <button onclick="stopWebCam();" id="buttonPause">Pause</button>
+    </div>
+</center>
+    <script src="./drawVideo.js"></script>
+</body>
+</html>

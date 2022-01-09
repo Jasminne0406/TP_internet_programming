@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box1{
+        background-color: rgba(128, 128, 128, 0.479);
+        width: 12%;
+        height: 40rem;
+        margin:10%;
+        padding: 2%;
+        position: absolute;
+    }
+    #box2{
+        background-color: rgba(128, 128, 128, 0.479);
+        width: 850px;
+        height:44rem;
+        left:28%;
+        top:24%;
+        padding:10px;
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+    }
+    #smallBox{
+        background-color: whitesmoke;
+        width: 200px;
+        height: 300px;
+        border-radius: 2px;
+        position: relative;
+        margin:5px;
+    }
+    
+    #button{
+        position: absolute;
+        right: 4px;
+        top:4px;
+    }
+    #caption{
+        position: absolute;
+        bottom: 0px;
+        left:8px;
+    }
+    #image{
+        position: absolute;
+        width: 120px;
+        height: 100px;
+        bottom: 130px;
+        left: 33px;
+    }
+</style>
+<body>
+<div>
+    <div id="box1">
+        <form autocomplete="off" onsubmit="onFormSubmit()">
+       <p>Name:</p>
+       <input type="text" name="name" id="name">
+       <p>Catagory:</p>
+       <input type="text" name="category" id="category">
+       <p>Price:</p>
+       <input type="number" name="price" id="price">
+       <p></p>
+       <button type="summit" name="add" >Add</button>
+       </form>
+    </div>
+    <div id="box2">
+       <div id="smallBox">
+           <div id="button">
+           <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Delete</button>
+           <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Change name</button>
+           </div>
+            <img src="book.png" id="image">
+           <div id="caption">
+            <p>Name  : Book I1</p>
+            <p>Price : 100 riel</p>
+            <p>Category : English</p>
+            </div>
+       </div>
+       <div id="smallBox">
+        <div id="button">
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Delete</button>
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Change name</button>
+        </div>
+         <img src="book.png" id="image">
+        <div id="caption">
+         <p>Name  : Book I1</p>
+         <p>Price : 100 riel</p>
+         <p>Category : English</p>
+         </div>
+    </div>
+    <div id="smallBox">
+        <div id="button">
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Delete</button>
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Change name</button>
+        </div>
+         <img src="book.png" id="image">
+        <div id="caption">
+         <p>Name  : Book I1</p>
+         <p>Price : 100 riel</p>
+         <p>Category : English</p>
+         </div>
+    </div>
+    <div id="smallBox">
+        <div id="button">
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Delete</button>
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Change name</button>
+        </div>
+         <img src="book.png" id="image">
+        <div id="caption">
+         <p>Name  : Book I1</p>
+         <p>Price : 100 riel</p>
+         <p>Category : English</p>
+         </div>
+    </div>
+    <div id="smallBox">
+        <div id="button">
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Delete</button>
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Change name</button>
+        </div>
+         <img src="book.png" id="image">
+        <div id="caption">
+         <p>Name  : Book I1</p>
+         <p>Price : 100 riel</p>
+         <p>Category : English</p>
+         </div>
+    </div>
+    <div id="smallBox">
+        <div id="button">
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Delete</button>
+        <button type="summit" style="background-color:rgba(128, 128, 128, 0.479)">Change name</button>
+        </div>
+         <img src="book.png" id="image">
+        <div id="caption">
+         <p>Name  : Book I1</p>
+         <p>Price : 100 riel</p>
+         <p>Category : English</p>
+         </div>
+    </div>
+       
+    </div>
+</div>
+<script src="./crud.js"></script>
+</body>
+</html>
