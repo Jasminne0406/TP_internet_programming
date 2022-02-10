@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        #container{
+            display: flex;
+            justify-content: center;
+        }
+        #login_page{
+            background-color: rgba(170, 170, 170, 0.222);
+            padding:20px;
+            border-radius: 10px;
+            margin:100px;
+            border: 2px solid black;
+        }
+        #photo{
+            width:150px;
+            height:150px;
+            border-radius: 50%;
+        }
+        input{
+            border: 1px solid grey;
+            width: 300px;
+            height: 30px;
+            border-radius: 5px;
+        }
+        button{
+            background-color: rgb(27, 70, 151);
+            padding: 10px 30px;
+            border-radius: 5px;
+            margin-top:30px;
+            color:aliceblue;
+        }
+        #header_home{
+            padding: 50px;
+            width:30%;
+            margin-top:-600px;
+            background-color:aquamarine;
+            color:black ;
+            font-family:'Courier New', Courier, monospace ;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="login_page">
+            <center>
+            <img id="photo" src="image/p2.jpg">
+            </center>
+            <p>Email</p>
+            <input type="email"  placeholder="Email" id="email">
+            <p>Password</p>
+            <input type="password"  placeholder="Password" id="password">
+            <br>
+            <center>
+            <button type="summit" id="btn_login">
+                     Log in
+            </button>
+            </center>
+        </div></div>
+        <center>
+        <div id="home_page">
+            <h1 id="header_home">Welcome to our home page!</h1>
+            <button type="summit" id="btn_logout">
+                Log out
+            </button>
+        </center>
+    </div>
+    <script>
+        //Email: email@gmail.com
+        //Password: 12345678
+
+        const verify = getCookie("email");
+        if (verify == "email@gmail.com") {
+            document.getElementById("home_page").style.visibility = 'visible';
+            document.getElementById("login_page").style.visibility = 'hidden';
+        } else {
+            document.getElementById("home_page").style.visibility = 'hidden';
+            document.getElementById("login_page").style.visibility = 'visible';
+        }
+
+        document.getElementById("btn_login").addEventListener("click", function(event) {
+            const email2 = email;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+
+            if (email == "email@gmail.com" && password == "12345678") {
+                setCookie(email2);
+                document.getElementById("home_page").style.visibility = 'visible';
+                document.getElementById("login_page").style.visibility = 'hidden';
+
+                document.getElementById("email").value = ""; //remove input
+                document.getElementById("password").value = "";
+            } else if (!email || !password) {
+                alert("Please input an email or password");
+            } else {
+                alert("Wrong password or email!");
+            }
+        });
+
+        document.getElementById("btn_logout").addEventListener("click", function() {
+            document.cookie = "email=email@gmail.com; expires=Thu, 18 Dec 2013 12:00:00 UTC"; //remove cookie
+            
+            document.getElementById("home_page").style.visibility = 'hidden';
+            document.getElementById("login_page").style.visibility = 'visible';
+        });
+
+        function setCookie(cookie) {
+            var now = new Date();
+            var time = now.getTime();
+            var expireTime = time + 1000 * 30;
+            now.setTime(expireTime);
+            document.cookie = 'email=' + cookie + ';expires=' + now.toUTCString() + ';path=/';
+        }
+
+        function getCookie(cookie) {
+            let name = cookie + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+</body>
+</html>
